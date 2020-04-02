@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+
+        /* grid의 필요성은 flex 속성을 가진값이 여러줄이 되었을 때 레이아웃이 깨지는 현상때문~ 기본적으로 column을 위한 css라 봐도 무방
+            grid-auto-flow ~~ flex-dirction과 비슷한 기능 
+           grid-auto-rows/ grid-auto-columns 
+           grid-template-area로 레이아웃 설정 - child와 일치해야함
+           gird-template-columns: fr으로 비율 설정/ repateat(개수, fr), fr
+           minmax(최소값, 최대값)- object의 최소,최대값 설정
+           maxc-ontent- 가질 수 있는 최대 크기를 가져라/ min-content- 최소를 가져라 
+           auto-fit: 넣을 수 있을 만큼 최대한 넣어라 ( DB나 정확한 개수를 모르는 데이터를 삽입해야할떄 유용) 
+           auto-fill: 기존에 있는 레이아웃에 컨텐츠가 없더라도 넣어준다( like ghost grid)
+            justify content/ alignt content -flex와 유사한 기능(main axis, cross axis)
+            place-content(align-content값, justify-content값)
+            justify-item/align-items/place-items - container(box) 안에 item을 조정하는것- default값은 container에 맞게 설정됨 
+            grid-column/row + grid-column/row-start/end (1,-1)은 모든 범위를 의미- line으로 설정/span으로 설정
+            line-name:  [line-name] fr , [line-name] fr ..
+            grid-area(row start, column start, row end, column end)
+            justify-self, align-self, place-self => grid 아이템 하나에 적용
+           */
+        .father{
+            display:grid;
+            grid-gap: 10px;
+            grid-auto-rows: 100px;
+            grid-auto-flow: dense; 
+            grid-template-columns: repeat(5,1fr)
+        }
+
+        .box{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            color:white;
+        }
+        .box:nth-child(even){
+            background-color: #359ad2;
+        }
+        .box:nth-child(odd){
+            background-color: #fd9317;
+        }
+        .box:first-child{
+            place-self: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="father">
+       <div class="box">1</div>
+       <div class="box">2</div>
+       <div class="box">3</div>
+       <div class="box">4</div>
+       <div class="box">5</div>
+       <div class="box">6</div>
+       <div class="box">7</div>
+       <div class="box">8</div>
+       <div class="box">9</div>
+       <div class="box">10</div>
+       <div class="box">11</div>
+       <div class="box">12</div>
+       <div class="box">13</div>
+       <div class="box">14</div>
+       <div class="box">15</div>
+       <div class="box">16</div>
+       <div class="box">17</div>
+       <div class="box">18</div>
+       <div class="box">19</div>
+       <div class="box">20</div>
+       <div class="box">21</div>
+       <div class="box">22</div>
+       <div class="box">23</div>
+       <div class="box">24</div>
+       <div class="box">25</div>
+       <div class="box">26</div>
+       <div class="box">27</div>
+       <div class="box">28</div>
+       <div class="box">29</div>
+       <div class="box">30</div>
+    </div> 
+</body>
+</html>

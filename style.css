@@ -1,0 +1,69 @@
+/*
+Matches
+
+li:matches(:nth-child(even), .target) {
+	background-color: blue;
+} 
+
+Not
+
+li:not(.target) {
+	background-color: blue;
+}
+
+
+:root = css의 전역변수 다른곳에서 import하면 변수처럼 갖다 쓸수 있다 - 팀 프로젝트에서 유용  
+
+:root {
+	--awesomecolor: 1px solid #ce002a;
+}
+
+li:first-child a {
+	border: var(--awesomecolor);
+}
+
+Custom selectors 
+
+@custom-selector :--headers h1, h2, h3, h4, h5, h6;
+
+:--headers {
+	color: #8e44ad;
+}
+
+
+Custom Media/ Media Query Ranges
+
+@custom-media --ipad-size (450px <= width <= 850px);
+
+@media (--ipad-size) {
+	body {
+		background-color: red;
+	}
+}
+
+color-mod : contrast/ alpha /lightness/ blackness 
+
+h1 {
+	font-family: system-ui;
+}
+
+
+nesting rule - 좀더 세밀하게 css설정 가능(unboxing=box or container에 종속적이지 않게 됨) 
+main {
+	background-color: blue;
+	& section {
+		background-color: red;
+		width: 500px;
+		& li {
+			background-color: yellow;
+			width: 400px;
+			& a {
+				color: black;
+				&:hover {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+}
+*/
